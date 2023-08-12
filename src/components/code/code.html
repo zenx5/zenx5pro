@@ -1,0 +1,23 @@
+<v-container fluid>
+    <v-row>
+        <v-col cols="2">
+            <v-card
+                class="mx-auto"
+                max-width="300"
+            >
+                <v-list :items="files">
+                    <template v-slot:item="{props:{title}}">
+                        <v-btn width="100%" class="m-5">{{title}}</v-btn>
+                    </template>
+                </v-list>
+            </v-card>
+        </v-col>
+        <v-col cols="10">
+            <v-textarea
+                counter
+                label="Code here"
+                :model-value="code"
+            ></v-textarea>
+        </v-col>
+    </v-row>
+</v-container>

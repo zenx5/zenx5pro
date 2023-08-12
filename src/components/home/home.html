@@ -1,0 +1,30 @@
+<v-avatar :image="image" size="200"></v-avatar>
+<h1>{{username}}</h1>
+<small style="font-size: 1.3rem; font-style: italic;">Octavio Martínez</small>
+<span style="text-align:center; max-width:700px;">{{ translate.description }}</span>
+<h2>{{ translate.links }}</h2>
+<div class="flex f-row">
+    <v-btn
+        v-for="link in links"
+        variant="outlined"
+        target="_blank"
+        style="width: 200px;"
+        :href="link.url"
+        :prepend-icon="link.icon">
+        {{ link.label }}
+    </v-btn>
+</div>
+<h2></h2>
+
+<div class="lang-toggle">
+    <v-menu>
+        <template v-slot:activator="{ props }">
+            <v-btn color="primary" v-bind="props">{{currentLang}}</v-btn>
+        </template>
+        <v-list>
+            <v-list-item v-for="item in langs" @click="()=>changeLang(item)" >
+                <v-list-item-title>{{item}}</v-list-item-title>
+            </v-list-item>
+        </v-list>
+    </v-menu>
+</div>
