@@ -9,7 +9,7 @@
         variant="outlined"
         target="_blank"
         style="width: 200px;"
-        :href="link.url"
+        :href="getLink(link.url)"
         :prepend-icon="link.icon">
         {{ link.label }}
     </v-btn>

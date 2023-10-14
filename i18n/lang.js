@@ -32,5 +32,3 @@ const LangConfig = new Lang({
     'en':en,
     'es':es
 })
-
-console.log(LangConfig)
