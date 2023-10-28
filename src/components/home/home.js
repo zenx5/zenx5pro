@@ -15,7 +15,8 @@ const Home = new Component('/src/components/home/home.html',{
                     icon:'mdi-file',
                     url: {
                         Es: "https://docs.google.com/presentation/d/1FwwnfO3ecUqhXlx7hAwhGJvbllphLLBun5fbn023Y0k/edit?usp=sharing",
-                        En: "https://docs.google.com/presentation/d/1RKko_7pjTwIA7p5_GVu2TX-bTz71N62RTamAT904fwo/edit?usp=sharing"
+                        En: "https://docs.google.com/presentation/d/1RKko_7pjTwIA7p5_GVu2TX-bTz71N62RTamAT904fwo/edit?usp=sharing",
+                        Pt: "https://docs.google.com/presentation/d/1FwwnfO3ecUqhXlx7hAwhGJvbllphLLBun5fbn023Y0k/edit?usp=sharing"
                     }
                 },
             ]
