@@ -30,5 +30,6 @@ function Lang( langs ){
 
 const LangConfig = new Lang({
     'en':en,
-    'es':es
+    'es':es,
+    'pt':pt
 })
