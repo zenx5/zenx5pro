@@ -2,8 +2,8 @@ const Home = new Component('/src/components/home/home.html',{
     data() {
         return {
             langs:LangConfig.getListLang(),
-            currentLang:LangConfig.getListLang()[0],
-            translate:LangConfig.getLang( LangConfig.getListLang()[0] ),
+            currentLang:LangConfig.getListLang()[1],
+            translate:LangConfig.getLang( LangConfig.getListLang()[1] ),
             username:'Zenx5',
             image:'https://avatars.githubusercontent.com/u/26119733?s=400&u=ad26266086d9fc6836ce5e180ef2f0e1a5eb68dd&v=4',
             links:[
