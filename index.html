@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zenx5's Site</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="assets/vuetify.min.css" rel="stylesheet"></link>
     <script src="assets/vue.global.js"></script>
     <script src="assets/vue-router.global.js"></script>
     <script src="assets/vuetify.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet"></link>
-    <link href="src/common.css" rel="stylesheet"></link>
     <script src="i18n/en.js"></script>
     <script src="i18n/es.js"></script>
     <script src="i18n/lang.js"></script>
@@ -18,7 +18,7 @@
     <script src="route.js"></script>
 </head>
 <body>
-    <div id="app" class="container-root flex f-column">
+    <div id="app" class="flex flex-col gap-[20px] items-center justify-center h-screen">
         <router-view></router-view>
     </div>
     <script defer src="src/components/home/home.js"></script>
