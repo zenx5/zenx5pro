@@ -1,44 +1,49 @@
-<v-avatar :image="image" size="200"></v-avatar>
-<h1 class="text-3xl font-bold">{{username}}</h1>
-<small class="text-xl italic" >Octavio Martínez</small>
-<span class="text-center  md:w-1/2 w-10/12" >{{ translate.description }}</span>
-<h2 class="text-2xl font-bold">Skills</h2>
-<div class="flex md:flex-row flex-col md:gap-5 gap-1 mx-4">
-    <div class="flex flex-row border gap-2 !border-black rounded-md py-4 px-10 flex-wrap">
-        <a target="_blank" href="https://github.com/zenx5?tab=repositories&q=React" class="hover:underline cursor-pointer italic px-2 border-black border-r">React</a>
-        <a target="_blank" href="https://github.com/zenx5?tab=repositories&q=Next" class="hover:underline cursor-pointer italic px-2 border-black border-r">NextJs</a>
-        <a target="_blank" href="https://github.com/zenx5?tab=repositories&q=Vue" class="hover:underline cursor-pointer italic px-2 border-black border-r">Vue</a>
-        <a target="_blank" href="https://github.com/zenx5?tab=repositories&q=Angular" class="hover:underline cursor-pointer italic px-2 border-black border-r">Angular</a>
-        <a target="_blank" href="https://github.com/zenx5?tab=repositories&q=Prisma" class="hover:underline cursor-pointer italic px-2 border-black border-r">Prisma</a>
-        <a target="_blank" href="https://github.com/zenx5?tab=repositories&q=Laravel" class="hover:underline cursor-pointer italic px-2 border-black border-r">Laravel</a>
-        <a target="_blank" href="https://github.com/zenx5?tab=repositories&q=Node" class="hover:underline cursor-pointer italic px-2 border-black border-r">Node</a>
-        <a target="_blank" href="https://github.com/zenx5?tab=repositories&q=Prestashop" class="hover:underline cursor-pointer italic px-2 border-black border-r">Prestashop Module</a>
-        <a target="_blank" href="https://github.com/zenx5?tab=repositories&q=Wordpress" class="hover:underline cursor-pointer italic px-2">Wordpress Plugin</a>
+<div class="flex flex-col gap-[20px] items-center justify-center pt-20">
+    <v-avatar :image="image" size="200"></v-avatar>
+    <h1 class="text-3xl font-bold">{{username}}</h1>
+    <span class="flex flex-col items-center">
+        <small class="text-xl italic" >Octavio Martínez</small>
+        <small class="text-xs">Repos: {{ publicRepos }}</small>
+    </span>
+    <span class="text-center  md:w-1/2 w-10/12" >{{ translate.description }}</span>
+    <h2 class="text-2xl font-bold">Skills</h2>
+    <div class="flex md:flex-row flex-col md:gap-5 gap-1 mx-4">
+        <div class="flex flex-row border gap-2 !border-black rounded-md py-4 px-10 flex-wrap">
+            <a target="_blank" href="https://github.com/zenx5?tab=repositories&q=React" class="hover:underline cursor-pointer italic px-2 border-black border-r">React</a>
+            <a target="_blank" href="https://github.com/zenx5?tab=repositories&q=Next" class="hover:underline cursor-pointer italic px-2 border-black border-r">NextJs</a>
+            <a target="_blank" href="https://github.com/zenx5?tab=repositories&q=Vue" class="hover:underline cursor-pointer italic px-2 border-black border-r">Vue</a>
+            <a target="_blank" href="https://github.com/zenx5?tab=repositories&q=Angular" class="hover:underline cursor-pointer italic px-2 border-black border-r">Angular</a>
+            <a target="_blank" href="https://github.com/zenx5?tab=repositories&q=Prisma" class="hover:underline cursor-pointer italic px-2 border-black border-r">Prisma</a>
+            <a target="_blank" href="https://github.com/zenx5?tab=repositories&q=Laravel" class="hover:underline cursor-pointer italic px-2 border-black border-r">Laravel</a>
+            <a target="_blank" href="https://github.com/zenx5?tab=repositories&q=Node" class="hover:underline cursor-pointer italic px-2 border-black border-r">Node</a>
+            <a target="_blank" href="https://github.com/zenx5?tab=repositories&q=Prestashop" class="hover:underline cursor-pointer italic px-2 border-black border-r">Prestashop Module</a>
+            <a target="_blank" href="https://github.com/zenx5?tab=repositories&q=Wordpress" class="hover:underline cursor-pointer italic px-2">Wordpress Plugin</a>
+        </div>
     </div>
-</div>
-<h2 class="text-2xl font-bold">{{ translate.links }}</h2>
-<div class="flex md:flex-row md:gap-5 gap-1 flex-col">
-    <v-btn
-        v-for="link in links"
-        variant="outlined"
-        target="_blank"
-        class="w-[200px] font-normal"
-        :href="getLink(link.url)"
-        :prepend-icon="link.icon">
-        {{ link.label }}
-    </v-btn>
-</div>
+    <h2 class="text-2xl font-bold">{{ translate.links }}</h2>
+    <div class="flex md:flex-row md:gap-5 gap-1 flex-col">
+        <v-btn
+            v-for="link in links"
+            variant="outlined"
+            target="_blank"
+            class="w-[200px] font-normal"
+            :href="getLink(link.url)"
+            :prepend-icon="link.icon">
+            {{ link.label }}
+        </v-btn>
+    </div>
 
 
-<div class="absolute top-[20px] right-[20px] ">
-    <v-menu>
-        <template v-slot:activator="{ props }">
-            <v-btn color="primary" v-bind="props">{{currentLang}}</v-btn>
-        </template>
-        <v-list>
-            <v-list-item v-for="item in langs" @click="()=>changeLang(item)" >
-                <v-list-item-title>{{item}}</v-list-item-title>
-            </v-list-item>
-        </v-list>
-    </v-menu>
+    <div class="absolute top-[20px] right-[20px] ">
+        <v-menu>
+            <template v-slot:activator="{ props }">
+                <v-btn color="primary" v-bind="props">{{currentLang}}</v-btn>
+            </template>
+            <v-list>
+                <v-list-item v-for="item in langs" @click="()=>changeLang(item)" >
+                    <v-list-item-title>{{item}}</v-list-item-title>
+                </v-list-item>
+            </v-list>
+        </v-menu>
+    </div>
 </div>

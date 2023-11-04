@@ -5,10 +5,11 @@ const Home = new Component('/src/components/home/home.html',{
             currentLang:LangConfig.getListLang()[1],
             translate:LangConfig.getLang( LangConfig.getListLang()[1] ),
             username:'Zenx5',
+            publicRepos: 0,
             image:'https://avatars.githubusercontent.com/u/26119733?s=400&u=ad26266086d9fc6836ce5e180ef2f0e1a5eb68dd&v=4',
             links:[
                 { label:'WhatsApp', icon:'mdi-whatsapp', url: 'https://wa.me/584125292507' },
-                { label:'LikedIn', icon:'mdi-linkedin', url: 'https://www.linkedin.com/in/zenx5' },
+                { label:'LinkedIn', icon:'mdi-linkedin', url: 'https://www.linkedin.com/in/zenx5' },
                 { label:'GitHub', icon:'mdi-github', url: 'https://github.com/zenx5' },
                 {
                     label:'CV',
@@ -21,6 +22,12 @@ const Home = new Component('/src/components/home/home.html',{
                 },
             ]
         }
+    },
+    created: async function(){
+        const response = await fetch(`https://api.github.com/users/zenx5`, { cache:"force-cache" })
+        const { avatar_url, public_repos } = await response.json()
+        if( avatar_url ) this.image = avatar_url
+        if( public_repos ) this.publicRepos = public_repos
     },
     methods:{
         changeLang(lang){
