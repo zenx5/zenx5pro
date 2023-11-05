@@ -27,9 +27,9 @@
             variant="outlined"
             target="_blank"
             class="w-[200px] font-normal"
-            :href="getLink(link.url)"
+            :href="getByLang(link.url)"
             :prepend-icon="link.icon">
-            {{ link.label }}
+            {{ getByLang(link.label) }}
         </v-btn>
     </div>
 
