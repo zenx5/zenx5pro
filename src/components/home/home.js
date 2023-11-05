@@ -12,7 +12,11 @@ const Home = new Component('/src/components/home/home.html',{
                 { label:'LinkedIn', icon:'mdi-linkedin', url: 'https://www.linkedin.com/in/zenx5' },
                 { label:'GitHub', icon:'mdi-github', url: 'https://github.com/zenx5' },
                 {
-                    label:'CV',
+                    label:{
+                        Es: "CV-Es",
+                        En: "CV-En",
+                        Pt: "CV-Pt"
+                    },
                     icon:'mdi-file',
                     url: {
                         Es: "https://docs.google.com/presentation/d/1FwwnfO3ecUqhXlx7hAwhGJvbllphLLBun5fbn023Y0k/edit?usp=sharing",
@@ -34,9 +38,9 @@ const Home = new Component('/src/components/home/home.html',{
             this.currentLang = lang
             this.translate = LangConfig.getLang( lang )
         },
-        getLink( url ) {
-            if( typeof url === 'string' ) return url
-            return url[this.currentLang]
+        getByLang( arg ) {
+            if( typeof arg === 'string' ) return arg
+            return arg[this.currentLang]
         }
     }
 })
