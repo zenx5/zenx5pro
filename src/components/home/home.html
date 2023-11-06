@@ -21,12 +21,13 @@
         </div>
     </div>
     <h2 class="text-2xl font-bold">{{ translate.links }}</h2>
-    <div class="flex md:flex-row md:gap-5 gap-1 flex-col">
+    <!-- <div class="flex md:flex-row md:gap-5 gap-1 flex-col"> -->
+    <div class="grid md:grid-cols-5 grid-cols-2 md:grid-rows-1 grid-rows-5 gap-4">
         <v-btn
             v-for="link in links"
             variant="outlined"
             target="_blank"
-            class="w-[200px] font-normal"
+            class="font-normal px-5"
             :href="getByLang(link.url)"
             :prepend-icon="link.icon">
             {{ getByLang(link.label) }}

@@ -1,0 +1,22 @@
+<div class="flex flex-col gap-[20px] items-center justify-center pt-20">
+    <v-avatar image="/assets/curso.jpeg" size="200"></v-avatar>
+    <h1 class="text-3xl font-bold" >Cursos</h1>
+    <div></div>
+    <div class="w-10/12 p-4 grid grid-rows-2 grid-cols-4 gap-4">
+        <div class="flex flex-col justify-between border shadow-xl p-0 block rounded-lg overflow-hidden gap-2" v-for="session in availableSessions">
+            <h2 class="bg-black text-white p-2 text-center font-bold text-xl">{{session.title}}</h2>
+            <span class="px-4 ">{{ session.description }}</span>
+            <span class="px-4 text-lg flex gap-2" v-if="session.nivel" >
+                <span class="font-medium">Nivel:</span>
+                <span>{{ session.nivelTag }}</span>
+            </span>
+            <span class="flex flex-row gap-4 justify-between pb-4 pt-2 px-10">
+                <v-btn icon="" :href="" class="bg-black text-white font-bold !lowercase !text-sm">lvl:{{ session.nivel }}</v-btn>
+                <v-btn icon="mdi-github" :href="session.github" target="_blank" class="bg-black text-white"></v-btn>
+                <v-btn icon="mdi-arrow-right" :href="session.link" class="bg-black text-white font-bold !lowercase !text-sm"></v-btn>
+            </span>
+        </div>
+
+    </div>
+
+</div>
