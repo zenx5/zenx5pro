@@ -1,0 +1,20 @@
+<div class="flex flex-col gap-[20px] items-center justify-center pt-20">
+    <v-avatar image="/assets/curso.jpeg" size="200"></v-avatar>
+    <a class="text-3xl font-bold" href="https://github.com/zenx5/academia-kavav/tree/curso/maquetacion-level-1" target="_blank">Curso de Maquetacion Web - Nivel 1</a>
+    <div></div>
+    <div class="w-10/12 p-4 grid grid-rows-2 grid-cols-4 gap-4">
+        <div class="flex flex-col justify-between border shadow-xl p-0 block rounded-lg overflow-hidden gap-2" v-for="session in availableSessions">
+            <h2 class="bg-black text-white p-2 text-center font-bold text-xl">Clase {{session.id}}</h2>
+            <span class="px-4 text-lg">
+                {{ session.title}}
+            </span>
+            <span class="flex flex-row gap-4 justify-evenly pb-4 pt-2">
+                <v-btn icon="mdi-github" :href="session.github" target="_blank" class="bg-black text-white"></v-btn>
+                <v-btn icon="mdi-star" :href="" class="bg-black text-white"></v-btn>
+                <v-btn icon="mdi-video" :href="session.video" :disabled="!session.video" class="bg-black text-white"></v-btn>
+            </span>
+        </div>
+
+    </div>
+
+</div>
