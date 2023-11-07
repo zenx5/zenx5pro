@@ -10,8 +10,8 @@
             </span>
             <span class="flex flex-row gap-4 justify-evenly pb-4 pt-2">
                 <v-btn icon="mdi-github" :href="session.github" target="_blank" class="bg-black text-white"></v-btn>
-                <v-btn icon="mdi-star" :href="" class="bg-black text-white"></v-btn>
-                <v-btn icon="mdi-video" :href="session.video" :disabled="!session.video" class="bg-black text-white"></v-btn>
+                <v-btn icon="mdi-star" disabled :href="" class="bg-black text-white"></v-btn>
+                <v-btn icon="mdi-video" :href="session.video" :download="session.videoName" :disabled="!session.video" class="bg-black text-white"></v-btn>
             </span>
         </div>
 
