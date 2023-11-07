@@ -6,15 +6,16 @@ const CursoMaquetacion = new Component('/src/components/curso-maquetacion/curso-
                     id:1,
                     title:"Introducción a la Programación e Instalación del Ambiente",
                     github:"https://github.com/zenx5/academia-kavav/tree/curso/maquetacion-level-1/clase-2",
-                    video: null,
-                    date: '11/3/2023'
+                    video: "/assets/videos/maquetacion-n1/maquetacion-n1-c1.mp4",
+                    videoName:"Introduccion-maquetacion-nivel-1.mp4",
+                    date: '11/6/2023'
                 },
                 {
                     id:2,
                     title:"¿Qué es HTML y CSS?",
                     github:"https://github.com/zenx5/academia-kavav/tree/curso/maquetacion-level-1/clase-2",
                     video: null,
-                    date: '11/10/2023'
+                    date: '11/7/2023'
                 },
             ]
 
