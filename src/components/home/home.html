@@ -8,7 +8,7 @@
     <span class="text-center  md:w-1/2 w-10/12" >{{ translate.description }}</span>
     <h2 class="text-2xl font-bold">Skills</h2>
     <div class="flex md:flex-row flex-col md:gap-5 gap-1 mx-4">
-        <div class="flex flex-row border gap-2 !border-black rounded-md py-4 px-10 flex-wrap">
+        <div class="flex flex-row border gap-2 !border-black rounded-md py-4 px-10 flex-wrap justify-center">
             <a target="_blank" href="https://github.com/zenx5?tab=repositories&q=React" class="hover:underline cursor-pointer italic px-2 border-black border-r">React</a>
             <a target="_blank" href="https://github.com/zenx5?tab=repositories&q=Next" class="hover:underline cursor-pointer italic px-2 border-black border-r">NextJs</a>
             <a target="_blank" href="https://github.com/zenx5?tab=repositories&q=Vue" class="hover:underline cursor-pointer italic px-2 border-black border-r">Vue</a>
@@ -25,15 +25,20 @@
     <div class="grid md:grid-cols-5 grid-cols-2 md:grid-rows-1 grid-rows-5 gap-4">
         <v-btn
             v-for="link in links"
-            variant="outlined"
+            :variant="link.color?'flat':'outlined'"
             target="_blank"
-            class="font-normal px-5"
+            :color="link.color"
+            :class="link.color?'font-normal px-5 text-white':'font-normal px-5'"
             :href="getByLang(link.url)"
             :prepend-icon="link.icon">
             {{ getByLang(link.label) }}
         </v-btn>
     </div>
 
+
+    <!-- <div class="absolute top-[20px] left-[20px]">
+        <v-switch inset v-model="mode"></v-switch>
+    </div> -->
 
     <div class="absolute top-[20px] right-[20px] ">
         <v-menu>
