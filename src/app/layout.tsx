@@ -19,8 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className }>
-        {/**+ " before:content-['Z'] before:font-bold before:text-[600px] before:absolute before:flex before:items-center before:justify-center before:w-screen before:h-screen before:-z-10 before:opacity-100 before:text-center before:rotate-[135deg] before:text-shadow-[9px -10px 10px black]" */}
+      <body className={inter.className + " bg-slate-100 text-slate-900" }>
         {children}
         <ModalCover />
 

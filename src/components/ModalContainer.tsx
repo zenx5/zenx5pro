@@ -19,7 +19,7 @@ export default function ModalContainer({ modals }: { modals: any[] }) {
         (async ()=>{
             const modalName = searchParams.get('modal');
             const params = searchParams.get('params');
-            const data = {}
+            const data = {} as {[key:string]:any}
             if( !modalName ) {
                 setContent( null )
                 setOpen( false )
