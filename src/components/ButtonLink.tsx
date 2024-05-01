@@ -19,8 +19,8 @@ export default function ButtonLink({ children, href, color, bgcolor, outlined, .
       {...props}
       href={href}
       target='_blank'
-      style={style}
-      className="rounded-md font-normal px-5 py-2 flex flex-row items-center justify-between gap-1">
+      // style={style}
+      className="border border-black bg-white hover:bg-slate-200 rounded-full font-normal p-2 flex flex-row items-center justify-center gap-1">
         { children }
     </Link>
   }
