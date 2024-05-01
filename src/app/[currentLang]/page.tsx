@@ -1,6 +1,5 @@
-
-import Link from "next/link"
-import { ButtonLink, MdiIcon, DropDown, Identy, Skills, ListLinks } from "@/components/Index"
+import Projects from "@/components/Projects"
+import { Identy, Skills, ListLinks } from "@/components/Index"
 import { labelSkill, langs, links, translate } from "@/tools/constants"
 
 
@@ -13,10 +12,11 @@ export default function Home({ params }: { params: { currentLang:string } }) {
     const description = translate[indexLang]?.description
 
 
-    return <div className="flex flex-col gap-5 items-center justify-center h-screen ">
+    return <div className="flex flex-col gap-5 items-center justify-center h-auto py-20 ">
         <Identy username={username} userimage={userimage} publicRepos={publicRepos} />
         <span className="text-center md:w-1/2 w-10/12" >{ description as string }</span>
         <Skills labelSkill={labelSkill} />
+        <Projects />
         <ListLinks links={links} currentLang={currentLang} />
     </div>
 }

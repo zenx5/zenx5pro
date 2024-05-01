@@ -1,6 +1,6 @@
 "use client"
 import ModalContainer from "./ModalContainer";
-import SkillDetails from "./SkillDetails";
+import SkillDetails from "./SkillDetails/Index";
 
 const modals:any[] = [
     {
