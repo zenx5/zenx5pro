@@ -65,11 +65,11 @@ const items = [
     }
 ]
 
-export default function Projects() {
+export default function Projects({ title }:{ title:string }) {
 
 
     return <div className="max-w-4xl mx-4">
-        <h1 className="text-2xl font-bold text-center mb-4">Projects</h1>
+        <h1 className="text-2xl font-bold text-center mb-4">{ title }</h1>
         {/** Carousel of projects */}
         <div className="w-full grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 grid-flow-row gap-4 justify-between items-center">
             {items.map( item => <div key={item.id} className="flex flex-col justify-between gap-2 border border-slate-200 rounded-lg shadow-lg overflow-hidden w-full h-72 group bg-white pt-2">
