@@ -13,8 +13,7 @@ export default function Home({ params }: { params: { currentLang:string } }) {
 
 
     return <div className="flex flex-col gap-5 items-center justify-center h-auto py-20 ">
-        <Identy position={position} userimage={userimage} publicRepos={publicRepos} />
-        <span className="text-center md:w-1/2 w-10/12" >{ description as string }</span>
+        <Identy position={position} userimage={userimage} lang={currentLang} />
         <Projects />
         <ListLinks links={links} currentLang={currentLang} />
     </div>

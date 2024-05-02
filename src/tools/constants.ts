@@ -59,6 +59,9 @@ export const links = [
 ]
 
 export const langs = ['es', 'en', 'pt']
+export const code_es = 'es'
+export const code_en = 'en'
+export const code_pt = 'pt'
 
 export const translate = [
     {
