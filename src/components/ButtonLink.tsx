@@ -1,4 +1,3 @@
-"use client"
 import Link from "next/link"
 
 export default function ButtonLink({ children, href, outlined, ...props }:{ children:any, href:string, outlined:boolean }) {

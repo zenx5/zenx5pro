@@ -1,6 +1,6 @@
 import Projects from "@/components/Projects"
-import { Identy, Skills, ListLinks } from "@/components/Index"
-import { labelSkill, langs, links, translate } from "@/tools/constants"
+import { Identy, ListLinks } from "@/components/Index"
+import { links } from "@/tools/constants"
 
 
 export default function Home({ params }: { params: { currentLang:string } }) {
