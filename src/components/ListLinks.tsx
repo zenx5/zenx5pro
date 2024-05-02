@@ -18,7 +18,7 @@ export default function ListLinks({ links, currentLang }:ListLinksProps) {
 
     return <>
         <div className="grid md:grid-cols-4 grid-cols-2 md:grid-rows-1 grid-rows-4 gap-4 mt-4">
-            {links.map( (link,index) => <ButtonLink key={index} href={getByLang(link.url)} bgcolor={link.bgcolor} color={link.color} outlined={link?.outlined as boolean}>
+            {links.map( (link,index) => <ButtonLink key={index} href={getByLang(link.url)} outlined={link?.outlined as boolean}>
                 <MdiIcon icon={link.icon} size={1} />
             </ButtonLink> )}
         </div>
