@@ -9,7 +9,7 @@ export default function Projects({ title }:{ title:string }) {
         <h1 className="text-2xl font-bold text-center mb-4">{ title }</h1>
         {/** Carousel of projects */}
         <div className="w-full grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 grid-flow-row gap-4 justify-between items-center">
-            {projects.map( item => <div key={item.id} className="flex flex-col justify-between gap-2 border border-slate-200 rounded-lg shadow-lg overflow-hidden w-full h-72 group bg-white pt-2">
+            {projects.map( item => <div key={item.id} className="flex flex-col justify-between gap-2 border border-slate-200 rounded-lg shadow-lg overflow-hidden w-full h-72 group text-black bg-white pt-2">
                 <div className="flex flex-col h-56 overflow-hidden">
                     <h2 className="mx-10 my-2 text-xl font-bold text-center h-12 flex flex-col justify-center">{item.title}</h2>
                     <p className="px-4 mx-0 overflow-y-scroll" style={{ scrollbarWidth:"thin" }}>{item.description}</p>
