@@ -89,7 +89,7 @@ export const projects = [
       title:'Not {JSON} Placeholder',
       image: '',
       description:'Implementacion de los endpoint del famoso {JSON} Placeholder con un "toque" didactico.',
-      website:'https://not-json-placeholder.vercel.app/posts',
+      website:'https://not-json-placeholder.vercel.app',
       repository:'https://github.com/zenx5/not-json-placeholder',
       privateRepository: false,
       tags:['React', 'HowDoIt', 'API']
