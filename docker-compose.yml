@@ -1,0 +1,6 @@
+version: '3'
+services:
+  zenx5web:
+    build: .
+    ports:
+      - 80:3000
