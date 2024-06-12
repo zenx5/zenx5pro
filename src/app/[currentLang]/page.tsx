@@ -1,6 +1,8 @@
 import Projects from "@/components/Projects"
 import { Identy, ListLinks } from "@/components/Index"
 import { links } from "@/tools/constants"
+import TabManager from "@/components/TabManager"
+import SkillMap from "@/components/SkillMap"
 
 
 export default function Home({ params }: { params: { currentLang:string } }) {
@@ -16,7 +18,16 @@ export default function Home({ params }: { params: { currentLang:string } }) {
 
     return <div className="flex flex-col gap-5 items-center justify-center h-auto py-20 ">
         <Identy position={position} userimage={userimage} lang={currentLang} />
-        <Projects title={proyectTitle} />
+        <TabManager
+            items={[{
+                title:proyectTitle,
+                content: <Projects />
+            },{
+                title:'Skills',
+                content: <SkillMap />
+            }
+            ]}
+        />
         <ListLinks links={links} currentLang={currentLang} />
     </div>
 }
