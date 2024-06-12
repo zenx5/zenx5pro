@@ -16,14 +16,14 @@ export const labelSkill = [
 ]
 
 export const links = [
-    {
-      label:'WhatsApp',
-      icon: 'mdi-whatsapp',
-      url: 'https://wa.me/584125292507',
-      bgcolor:'#4caf50',
-      color:'#fff',
-      outlined: false
-    },
+    // {
+    //   label:'WhatsApp',
+    //   icon: 'mdi-whatsapp',
+    //   url: 'https://wa.me/584125292507',
+    //   bgcolor:'#4caf50',
+    //   color:'#fff',
+    //   outlined: false
+    // },
     {
       label:'LinkedIn',
       icon: 'mdi-linkedin',
