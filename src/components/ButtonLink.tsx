@@ -6,7 +6,7 @@ export default function ButtonLink({ children, href, outlined, ...props }:{ chil
       {...props}
       href={href}
       target='_blank'
-      className="border border-slate-200 shadow-lg hover:shadow bg-white text-black  hover:bg-slate-100 rounded-full font-normal p-2 flex flex-row items-center justify-center gap-1">
+      className="border border-slate-200 shadow-lg hover:shadow bg-white text-black  hover:bg-slate-200 rounded-lg font-normal p-1 flex flex-row items-center justify-center gap-1">
         { children }
     </Link>
   }
