@@ -46,8 +46,8 @@ export default function SkillMap(){
     ]
 
 
-    return <>
-        <div className="relative flex flex-col w-full gap-2 divide-y bg-white text-black rounded-lg h-96 overflow-y-scroll" style={{ scrollbarWidth:'none' }}>
+    return <div className="w-full max-w-4xl mx-4">
+        <div className="relative flex flex-col w-full gap-2 divide-y bg-white text-black rounded-lg h-96" >
             <span className="flex flex-row w-full divide-x mb-2 sticky top-0 bg-white py-2 px-5 rounded-t-lg">
                 <span className="w-2/12 flex gap-2 flex-wrap justify-center">
                     <h2 className="text-lg text-center">Zone</h2>
@@ -75,5 +75,5 @@ export default function SkillMap(){
             <p className="ml-2">(*) He desarrollado productos funcionales usando estos skill</p>
             <p className="ml-2">(**) He estudiado estos skill y desarrollado proyectos para conocer la tecnología. Me atrevo a tomar proyectos relacionados</p>
         </small>
-    </>
+    </div>
 }
