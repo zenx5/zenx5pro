@@ -9,7 +9,6 @@ export default function ItemProject(props:ProjectType){
 
     useEffect(()=>{
         function checkViewport() {
-            console.log('checkViewport')
             const width = window.visualViewport?.width
             setShow(false)
             if( width ) {
