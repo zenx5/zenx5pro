@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className + " relative h-full w-full bg-slate-800 text-white" }>
+      <body className={inter.className + " relative h-full w-full bg-slate-800 text-white px-4" }>
           {children}
           <Background />
       </body>
