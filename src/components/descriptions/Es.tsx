@@ -1,6 +1,6 @@
 export default function Es({ year }:{ year: number }) {
 
-    return <div className="col-span-1 sm:col-span-2 text-md">
+    return <>
         <p className="mb-4">Hola, aprendí a programar con 12 años haciendole ingenieria inversa a un <span className="font-bold">Script de Pascal</span>, y desde allí nació mi pasión por el código.</p>
         <p className="mb-4">Ahora mismo tengo <span className="font-bold">{year} años</span> desarrollando diferentes soluciones de software para varias agencias, donde he trabajado con <span className="font-bold">landing pages, ecommerce, apps web y movil</span>.</p>
         <span className="flex flex-col-reverse">
@@ -12,5 +12,5 @@ export default function Es({ year }:{ year: number }) {
                 <p>También he desarrollado algunas ideas propias que puedes observar a continuación.</p>
             </span>
         </span>
-    </div>
+    </>
 }

@@ -1,6 +1,6 @@
 export default function Pt({ year }:{ year: number }) {
 
-    return <div className="col-span-1 sm:col-span-2 text-md">
+    return <>
         <p className="mb-4">Oi, aprendi a programar com 12 anos fazendo engenharia reversa em um <span className="font-bold">Script de Pascal</span>, e a partir daí nasceu minha paixão pelo código.</p>
         <p className="mb-4">Agora mesmo tenho <span className="font-bold">{year} anos</span> desenvolvendo diferentes soluções de software para várias agências, onde trabalhei com <span className="font-bold">landing pages, ecommerce, apps web e mobile</span>.</p>
         <span className="flex flex-col-reverse">
@@ -12,5 +12,5 @@ export default function Pt({ year }:{ year: number }) {
                 <p>Também desenvolvi algumas ideias próprias que você pode ver abaixo.</p>
             </span>
         </span>
-    </div>
+    </>
 }

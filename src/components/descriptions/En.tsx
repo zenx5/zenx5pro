@@ -1,6 +1,6 @@
 export default function En({ year }:{ year: number }) {
 
-    return <div className="col-span-1 sm:col-span-2 text-md">
+    return <>
         <p className="mb-4">Hi, I learned to program at 12 years old by reverse engineering a <span className="font-bold">Pascal Script</span>, and from there my passion for code was born.</p>
         <p className="mb-4">Right now I am <span className="font-bold">{year} years old</span> developing different software solutions for various agencies, where I have worked with <span className="font-bold">landing pages, ecommerce, web and mobile apps</span>.</p>
         <span className="flex flex-col-reverse">
@@ -12,5 +12,5 @@ export default function En({ year }:{ year: number }) {
                 <p>I have also developed some of my own ideas that you can see below.</p>
             </span>
         </span>
-    </div>
+    </>
 }
