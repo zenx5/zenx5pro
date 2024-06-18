@@ -1,6 +1,7 @@
 import Projects from "@/components/Projects"
 import { Identy } from "@/components/Index"
 import SkillMap from "@/components/SkillMap"
+import Blog from "@/components/Blog/Blog"
 
 
 export default function Home({ params }: { params: { currentLang:string } }) {
@@ -16,9 +17,9 @@ export default function Home({ params }: { params: { currentLang:string } }) {
 
     return <div className="flex flex-col gap-5 items-center justify-center h-auto py-20 ">
         <Identy position={position} userimage={userimage} lang={currentLang} />
-        <h2 className="text-2xl font-bold text-center hover:underline">{ proyectTitle }</h2>
+        <h2 className="text-2xl font-bold text-center">{ proyectTitle }</h2>
         <Projects />
-        <h2 className="text-2xl font-bold text-center mt-4 hover:underline">Skills</h2>
+        <h2 className="text-2xl font-bold text-center mt-4">Skills</h2>
         <SkillMap />
     </div>
 }
