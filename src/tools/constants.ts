@@ -33,6 +33,14 @@ export const links = [
       outlined: false
     },
     {
+        label:'Email',
+        icon: 'mdi-email',
+        url: 'mailto:omartinez1618@gmail.com',
+        bgcolor:'#000000',
+        color:'#fff',
+        outlined: false
+    },
+    {
       label:{
           es: "CV-Es",
           en: "CV-En",
