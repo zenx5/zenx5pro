@@ -12,7 +12,12 @@ interface IdentyProps {
     lang: string
 }
 
-export default function Identy({ position, userimage, lang}:IdentyProps) {
+interface ItemResponseLink {
+    url: string,
+    icon: string
+}
+
+export default async function Identy({ position, userimage, lang}:IdentyProps) {
 
     const experienceYear = () => {
         const currentYear = new Date().getFullYear()
@@ -20,13 +25,17 @@ export default function Identy({ position, userimage, lang}:IdentyProps) {
         return currentYear - startYear
     }
 
+    const response = await fetch("https://raw.githubusercontent.com/zenx5/zenx5/feature/cms/cms/links.json", { cache:'force-cache' })
+    const { classContainer, items } = await response.json()
+
+
     return <div className="grid sm:grid-cols-3 grid-cols-1  gap-2 max-w-4xl mx-4">
         <div className="col-span-1 flex items-center sm:items-start flex-col sm:h-screen sm:absolute">
             <Image className="rounded-lg" alt={position} src={userimage} width={200} height={200} />
             <h1 className="text-3xl font-bold">{position}</h1>
             <p className="text-xl italic" >Octavio Martínez</p>
             <small className="text-lg text-slate-500" >Zenx5</small>
-            <ListLinks links={links} currentLang={lang} />
+            <ListLinks links={links.map( link => ({...link, url: items.find( (item:ItemResponseLink) => item.icon===link.icon )?.url }) )} currentLang={lang} />
         </div>
         <div className="sm:col-start-2 sm:col-span-2 col-start-1 col-span-1 text-md">
             { lang === code_es && <Es year={experienceYear()} /> }

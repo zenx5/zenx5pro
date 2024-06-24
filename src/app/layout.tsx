@@ -19,9 +19,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className + " relative h-full w-full bg-slate-800 text-white px-4" }>
+      <body className={inter.className + " relative h-screen w-screen bg-white" }>
           {children}
-          <Background />
       </body>
     </html>
   )

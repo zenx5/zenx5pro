@@ -6,8 +6,8 @@ export default function Layout({ children, params }: { children: React.ReactNode
 
     return <>
         { children }
-        <div className="absolute top-[20px] right-[20px]">
+        {/* <div className="absolute top-[20px] right-[20px]">
             <DropDown label={currentLang} items={langs} />
-        </div>
+        </div> */}
     </>
 }
