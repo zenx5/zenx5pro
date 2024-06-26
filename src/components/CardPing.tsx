@@ -1,7 +1,7 @@
 
 export default function CardPing({ isContent, className, children }:{ isContent?:boolean, className:string, children:any }) {
     const withoutContent = "relative p-4 border-t border-l border-indigo-50 hover:border-indigo-100 rounded-ee-lg shadow-[10px_10px_30px_-15px_rgba(0,0,0,0.2)] shadow-indigo-400 hover:shadow-indigo-500"
-    const withContent = "relative p-4 border-t border-l border-indigo-50 hover:border-indigo-100 rounded-ee-lg shadow-[10px_10px_30px_-15px_rgba(0,0,0,0.2)] shadow-indigo-400 hover:shadow-indigo-500 flex flex-col gap-4 bg-white divide-y"
+    const withContent = "relative p-4 border-t border-l border-indigo-50 hover:border-indigo-100 rounded-ee-lg shadow-[10px_10px_30px_-15px_rgba(0,0,0,0.2)] shadow-indigo-400 hover:shadow-indigo-500 flex flex-col gap-0 bg-white divide-y"
 
 
     return <span className={[(isContent ? withContent : withoutContent), className , "group"].join(" ") }>

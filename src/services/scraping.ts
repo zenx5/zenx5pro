@@ -1,57 +1,53 @@
-import puppeteer, { Page } from "puppeteer"
+import { JSDOM } from 'jsdom'
 
-export const loadPage = async (link:string, selector:string) => {
-    try {
-        const browser = await puppeteer.launch({ headless:true })
-        const page = await browser.newPage()
-        await page.goto(link)
-        return [page, await page.$$(selector)]
-    } catch( error:any ) {
-        return [null, null]
+
+export const getArticlesByAuthor = async (author:string, max:number) => {
+    const response = await fetch(`https://www.linkedin.com/today/author/${author}`)
+    const html = await response.text()
+    const dom = new JSDOM(html)
+    const document = dom.window.document
+    const articles = document.querySelectorAll('.article-card')
+
+    const result:any[] = []
+
+    for( const item of articles ) {
+        const title = item.querySelector('.article-card__title')?.textContent
+        const [href] = item.querySelector('.article-card__title--link')?.getAttribute('href').split('?')
+        const date = item.querySelector('.article-card__meta-info')?.textContent
+        const interactions = item.querySelector('.article-card__meta-info.article-card__meta-info--counts')?.textContent
+        result.push( {
+            title,
+            href,
+            date,
+            interactions: getInteractions(interactions),
+            extract: await getExtrat(href)
+        } )
     }
-}
 
-export const getArticlesByAuthor = async (author:string, max:number=0) => {
-    const result = []
-    const [page, articles] = await loadPage(`https://www.linkedin.com/today/author/${author}`, '.article-card') as [Page, HTMLElement[]]
-
-    if( !articles || !page ) return []
-
-    
-
-    for( const element of articles ) {
-        const article = await page.evaluate( item => {
-
-            const title = item.querySelector('.article-card__title')?.textContent
-            const [href] = item.querySelector('.article-card__title--link')?.getAttribute('href').split('?')
-            const date = item.querySelector('.article-card__meta-info')?.textContent
-            const interactions = item.querySelector('.article-card__meta-info.article-card__meta-info--counts')?.textContent
-            return {
-                title,
-                href,
-                date,
-                interactions
-            }
-        }, element)
-        result.push( article )
-    }
-    return max===0 ? result : result.slice(0, max)
+    return result.slice( 0 , max ?? result.length )
 }
 
 export const getExtrat = async (link:string) => {
     const result = []
-    const [page, contents] = await loadPage(link, '.article-main__content') as [Page, HTMLElement[]]
-
-    if( !contents || !page ) return []
-
+    const response = await fetch(link)
+    const html = await response.text()
+    const dom = new JSDOM(html)
+    const document = dom.window.document
+    const contents = document.querySelectorAll('.article-main__content')
     let index = 0
-    for(const element of contents) {
+    for(const item of contents) {
         if( index < 2 ) {
-            const content = await page.evaluate( item => item.textContent, element )
-            result.push( content )
+            result.push( item.textContent )
         }
-        index++        
+        index++
     }
     return result.join(" ").slice(0,60)
 }
 
+
+const getInteractions = (content:string) => {
+    if( !content ) return ""
+    const labels = content.replaceAll(/[0-9]{1,}/g, '').split(" ").filter( (element:string) => element!=="" )
+    const counts = content.replaceAll(/[a-zA-Z]{1,}/g, '').split(" ").filter( (element:string) => element!=="" )
+    return labels.map( (label, index) => `${label} ${counts[index]}` ).join(", ")
+}
