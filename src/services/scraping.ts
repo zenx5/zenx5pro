@@ -20,12 +20,12 @@ export const getArticlesByAuthor = async (author:string) => {
     for( const element of articles ) {
         const article = await page.evaluate( item => {
             const title = item.querySelector('.article-card__title')?.textContent
-            const link = item.querySelector('.article-card__title--link')?.getAttribute('href')
+            const href = item.querySelector('.article-card__title--link')?.getAttribute('href')
             const date = item.querySelector('.article-card__meta-info')?.textContent
             const interactions = item.querySelector('.article-card__meta-info.article-card__meta-info--counts')?.textContent
             return {
                 title,
-                link,
+                href,
                 date,
                 interactions
             }
@@ -41,10 +41,14 @@ export const getExtrat = async (link:string) => {
 
     if( !contents || !page ) return []
 
+    let index = 0
     for(const element of contents) {
-        const content = await page.evaluate( item => item.textContent, element )
-        result.push( content )
+        if( index < 2 ) {
+            const content = await page.evaluate( item => item.textContent, element )
+            result.push( content )
+        }
+        index++        
     }
-    return result.join(" ")
+    return result.join(" ").slice(0,60)
 }
 

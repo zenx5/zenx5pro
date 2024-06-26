@@ -8,7 +8,7 @@ export default async function Articles() {
     return <CardPing className="col-span-1 md:col-start-3 col-start-1" isContent>
         {articles.map( (article:any) => <Link key={article.id} target="_blank" href={article.href} className="py-4">
             <h2 className="text-xl opacity-70">{article.title}</h2>
-            <p className="text-sm opacity-50">{article.extract}</p>
+            <p className="text-sm opacity-50">{article.extract}...</p>
         </Link>)}
     </CardPing>
 }
@@ -19,7 +19,7 @@ async function getArticles() {
     const articles:any[] = await getArticlesByAuthor('zenx5')
     console.log( articles )
     for( const article of articles ) {
-        const [link] = article.link.split('?')
+        const [link] = article.href.split('?')
         result.push({
             id: index,
             ...article,
