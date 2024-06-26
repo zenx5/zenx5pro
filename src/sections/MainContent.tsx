@@ -3,7 +3,7 @@ import CardPing from "@/components/CardPing"
 
 export default function MainContent() {
 
-    return <CardPing className="md:col-span-2 col-span-1" isContent>
+    return <CardPing className="md:col-span-2 col-span-1 justify-between" isContent>
         <p className="py-4">
             <span  className="opacity-70">Con 12 años, sin acceso a internet y en MS-DOS hice <span className="font-bold">ingeniería inversa de código en Pascal</span>, así comencé mis primeros pasos en este maravilloso mundo del desarrollo</span>
         </p>

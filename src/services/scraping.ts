@@ -11,16 +11,19 @@ export const loadPage = async (link:string, selector:string) => {
     }
 }
 
-export const getArticlesByAuthor = async (author:string) => {
+export const getArticlesByAuthor = async (author:string, max:number=0) => {
     const result = []
     const [page, articles] = await loadPage(`https://www.linkedin.com/today/author/${author}`, '.article-card') as [Page, HTMLElement[]]
 
     if( !articles || !page ) return []
 
+    
+
     for( const element of articles ) {
         const article = await page.evaluate( item => {
+
             const title = item.querySelector('.article-card__title')?.textContent
-            const href = item.querySelector('.article-card__title--link')?.getAttribute('href')
+            const [href] = item.querySelector('.article-card__title--link')?.getAttribute('href').split('?')
             const date = item.querySelector('.article-card__meta-info')?.textContent
             const interactions = item.querySelector('.article-card__meta-info.article-card__meta-info--counts')?.textContent
             return {
@@ -32,7 +35,7 @@ export const getArticlesByAuthor = async (author:string) => {
         }, element)
         result.push( article )
     }
-    return result
+    return max===0 ? result : result.slice(0, max)
 }
 
 export const getExtrat = async (link:string) => {
