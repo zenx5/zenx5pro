@@ -10,11 +10,12 @@ export const getArticlesByAuthor = async (author:string, max:number) => {
 
     const result:any[] = []
 
-    for( const item of articles ) {
-        const title = item.querySelector('.article-card__title')?.textContent
-        const [href] = item.querySelector('.article-card__title--link')?.getAttribute('href').split('?')
+    articles.forEach( async (item) =>  {
+        if( !item ) return;
+        const title = item?.querySelector('.article-card__title')?.textContent
+        const [href] = item?.querySelector('.article-card__title--link')?.getAttribute('href')?.split('?') as string[]
         const date = item.querySelector('.article-card__meta-info')?.textContent
-        const interactions = item.querySelector('.article-card__meta-info.article-card__meta-info--counts')?.textContent
+        const interactions = item.querySelector('.article-card__meta-info.article-card__meta-info--counts')?.textContent as string
         result.push( {
             title,
             href,
@@ -22,25 +23,25 @@ export const getArticlesByAuthor = async (author:string, max:number) => {
             interactions: getInteractions(interactions),
             extract: await getExtrat(href)
         } )
-    }
+    } )
 
     return result.slice( 0 , max ?? result.length )
 }
 
 export const getExtrat = async (link:string) => {
-    const result = []
+    const result:string[] = []
     const response = await fetch(link)
     const html = await response.text()
     const dom = new JSDOM(html)
     const document = dom.window.document
     const contents = document.querySelectorAll('.article-main__content')
     let index = 0
-    for(const item of contents) {
+    contents.forEach( (item) => {
         if( index < 2 ) {
-            result.push( item.textContent )
+            result.push( item?.textContent as string)
         }
         index++
-    }
+    })
     return result.join(" ").slice(0,60)
 }
 
