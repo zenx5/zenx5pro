@@ -47,11 +47,11 @@ export const links = [
           pt: "CV-Pt"
       },
       icon: 'mdi-file',
-      url: {
-          es: "https://docs.google.com/document/d/10i7Fic4orcgdtHKgt6QSRMM1gn-BbL4iaRavHzCZzFA/edit?usp=sharing",
-          en: "https://docs.google.com/presentation/d/1RKko_7pjTwIA7p5_GVu2TX-bTz71N62RTamAT904fwo/edit?usp=sharing",
-          pt: "https://docs.google.com/presentation/d/1FwwnfO3ecUqhXlx7hAwhGJvbllphLLBun5fbn023Y0k/edit?usp=sharing",
-      },
+      url: "https://docs.google.com/document/d/10i7Fic4orcgdtHKgt6QSRMM1gn-BbL4iaRavHzCZzFA/edit?usp=sharing",
+    //       es: "https://docs.google.com/document/d/10i7Fic4orcgdtHKgt6QSRMM1gn-BbL4iaRavHzCZzFA/edit?usp=sharing",
+    //       en: "https://docs.google.com/presentation/d/1RKko_7pjTwIA7p5_GVu2TX-bTz71N62RTamAT904fwo/edit?usp=sharing",
+    //       pt: "https://docs.google.com/presentation/d/1FwwnfO3ecUqhXlx7hAwhGJvbllphLLBun5fbn023Y0k/edit?usp=sharing",
+    //   },
       bgcolor:'#fff',
       color:'#000',
       outlined: true
@@ -66,6 +66,7 @@ export const code_pt = 'pt'
 export const projects = [
     {
         id:1,
+        active: true,
         title:'Prompt Box',
         image: '',
         description: "Extension para chrome con 170 usuarios que permite crear, guardar y copiar prompts con facilidad para usar en ChatGPT o algún otro servicio de IA.</span>",
@@ -76,6 +77,7 @@ export const projects = [
     },
     {
         id:2,
+        active: false,
         title:'Search Dependencies',
         image: '',
         description:'Search Dependencies es una apliacación web, estension de chrome y complemento de firefox que permite buscar dependencias de un proyecto en NPM y Yarn.',
@@ -86,6 +88,7 @@ export const projects = [
     },
     {
         id:3,
+        active: false,
         title:'Not {JSON} Placeholder',
         image: '',
         description:'Implementacion de los endpoint del famoso {JSON} Placeholder con un "toque" didactico.',
@@ -96,6 +99,7 @@ export const projects = [
     },
     {
         id:4,
+        active: false,
         title:'How Do It',
         image: '',
         description:'How Do It es una libreria de React que permite crear tutoriales interactivos de forma sencilla.',
@@ -106,6 +110,7 @@ export const projects = [
     },
     {
         id:5,
+        active: false,
         title:'Zoho API Support',
         image: '',
         description:'Plugin de WordPress que permite conectar con la API de Zoho para obtener y enviar datos de los modulos de Zoho CRM.',
@@ -116,6 +121,7 @@ export const projects = [
     },
     {
         id:6,
+        active: false,
         title:'Log Users  of Zoho Books',
         image: '',
         description:'Plugin de WordPress que permite llevar un Log de usuarios de Zoho Books en WordPress e importar clientes de Zoho a WordPress.',
