@@ -3,6 +3,7 @@ import { JSDOM } from 'jsdom'
 
 export const getArticlesByAuthor = async (author:string, max:number) => {
     const response = await fetch(`https://www.linkedin.com/today/author/${author}`)
+    console.log( response.status)
     const html = await response.text()
     const dom = new JSDOM(html)
     const document = dom.window.document
@@ -21,7 +22,7 @@ export const getArticlesByAuthor = async (author:string, max:number) => {
             href,
             date,
             interactions: getInteractions(interactions),
-            extract: await getExtrat(href)
+            extract: { link: href, data: "" }
         } )
     } )
 
@@ -29,20 +30,31 @@ export const getArticlesByAuthor = async (author:string, max:number) => {
 }
 
 export const getExtrat = async (link:string) => {
-    const result:string[] = []
-    const response = await fetch(link)
-    const html = await response.text()
-    const dom = new JSDOM(html)
-    const document = dom.window.document
-    const contents = document.querySelectorAll('.article-main__content')
-    let index = 0
-    contents.forEach( (item) => {
-        if( index < 2 ) {
-            result.push( item?.textContent as string)
+    try{
+        const result:string[] = []
+        const response = await fetch(link)
+        const html = await response.text()
+        const dom = new JSDOM(html)
+        const document = dom.window.document
+        const contents = document.querySelectorAll('.article-main__content')
+        let index = 0
+        contents.forEach( (item) => {
+            if( index < 2 ) {
+                result.push( item?.textContent as string)
+            }
+            index++
+        })
+        return {
+            link,
+            data: result.join(" ").slice(0,60)
         }
-        index++
-    })
-    return result.join(" ").slice(0,60)
+    }catch(e:any){
+        console.log(e.message)
+        return {
+            link,
+            data: "..."
+        }
+    }
 }
 
 
