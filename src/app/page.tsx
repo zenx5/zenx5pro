@@ -1,4 +1,5 @@
 import Articles from "@/sections/Articles";
+import Details from "@/sections/Details";
 import Header from "@/sections/Header";
 import MainContent from "@/sections/MainContent";
 
@@ -10,7 +11,10 @@ export default async function Page(){
         <Header />
         <div className="w-full max-w-4xl grid md:grid-cols-3 grid-cols-1 gap-5 md:mx-auto mx-5">
             <MainContent />
-            <Articles />
+            <div className="flex flex-col gap-4">
+                <Articles />
+                <Details />
+            </div>
         </div>
     </div>
 }
