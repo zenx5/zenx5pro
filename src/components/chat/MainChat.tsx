@@ -4,6 +4,7 @@ import Link from "next/link";
 import Input from "./Input"
 import MessageItem from "./MessageItem";
 import { Message, continueConversation } from "@/tools/actions";
+import LinkSchedule from "../LinkSchedule";
 
 
 
@@ -14,12 +15,6 @@ export function MainChat() {
     const [messages, setMessages] = useState<Message[]>([
         // { role: 'assistant', content: `Basándonos en su experiencia, habilidades, expectativas y lo que sabemos de sus aspiraciones salariales, Octavio consideraría seriamente ofertas laborales que estén dentro del rango de **$1200 a $1800 dólares mensuales**. Este rango se justifica por: * **Su experiencia y habilidades:** Octavio tiene amplia experiencia en desarrollo web, especialmente con React, Next.js y WordPress. Ha liderado equipos, corregido malas prácticas de desarrollo y trabajado en proyectos complejos para empresas internacionales. * **Sus aspiraciones salariales:** Ha mencionado que considera que su experiencia merece una remuneración mayor a la que ha recibido en algunos trabajos y que su objetivo es alcanzar un salario dentro de ese rango. * **Su situación actual:** Actualmente, sus proyectos como freelance y su trabajo dictando clases le permiten obtener ingresos considerables. Para que una oferta laboral sea atractiva, debería igualar o superar sus ingresos actuales. Es importante destacar que este rango es una referencia y puede variar dependiendo de otros factores como: * **Tipo de empresa:** Una empresa grande o con mayor presupuesto podría ofrecer un salario en la parte alta del rango, mientras que una startup o empresa más pequeña podría estar en la parte baja. * **Beneficios adicionales:** Beneficios como seguro médico, plan de pensiones, vacaciones pagadas, flexibilidad horaria o posibilidades de desarrollo profesional podrían influir en su decisión, incluso si el salario base es ligeramente menor. * **Interés en el proyecto:** Si el proyecto es particularmente interesante, desafiante o se alinea con sus objetivos profesionales a largo plazo, podría considerar una oferta con un salario ligeramente inferior al rango inicial. En resumen, Octavio busca un trabajo que le ofrezca un equilibrio entre una buena remuneración económica, un ambiente laboral positivo y oportunidades de crecimiento profesional. El rango salarial de $1200 a $1800 dólares mensuales es un buen punto de partida para determinar si una oferta laboral se ajusta a sus expectativas.` }
     ])
-    const [count, setCount] = useState(0)
-
-    const handlerCount = () => {
-        console.log("count", count + 1)
-        setCount(count + 1)
-    }
 
     const lastIsAssistant = messages.length > 0 ? messages[messages.length - 1]?.role === 'assistant' : true
 
@@ -89,16 +84,8 @@ export function MainChat() {
                 </svg>
                 <span className="sr-only">Send</span>
             </button>
-            <span className="border-l border-slate-500"></span>
-            <Link
-                href="https://calendar.app.google/sXX9tttSHyiFox5cA"
-                target="_blank"
-                onClick={handlerCount}
-                className="bg-indigo-500 text-white items-center flex flex-row p-1 rounded w-fit h-fit">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
-                </svg>
-            </Link>
+            <span className="border-l border-slate-500 mx-2"></span>
+            <LinkSchedule />
         </div>
     </div>
 }
