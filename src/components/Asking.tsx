@@ -17,7 +17,7 @@ export default function Asking(){
     },[searchParams])
 
     return searchParams.get("ask") && <div className="w-screen h-screen absolute bg-indigo-400 bg-opacity-50 flex items-center justify-center">
-        <div className="bg-white rounded-lg h-2/3 w-1/2 py-6 px-10 ">
+        <div className="bg-white rounded-lg h-3/4 w-3/4 py-6 px-10 ">
             <MainChat />
         </div>
     </div>
