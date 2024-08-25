@@ -1,10 +1,15 @@
 import Link from "next/link"
 import Image from "next/image"
 import CardPing from "@/components/CardPing"
+import LinkSchedule from "@/components/LinkSchedule"
 
 export default function MainContent() {
 
     return <CardPing className="md:col-span-2 col-span-1 " isContent>
+        <span className="flex flex-row justify-between items-center pb-4">
+            <h2 className="font-bold text-xl mb-2">Sobre mi</h2>
+            <LinkSchedule />
+        </span>
         <p className="py-4">
             <span  className="opacity-70">Con 12 años, sin acceso a internet y en MS-DOS hice <span className="font-bold">ingeniería inversa de código en Pascal</span>, así comencé mis primeros pasos en este maravilloso mundo del desarrollo</span>
         </p>
@@ -21,6 +26,5 @@ export default function MainContent() {
                 <span>Cada una de estas soluciones las he creado motivado por mejorar la calidad de los desarrollos y la productividad de los equipos en los que he trabajado.</span>
             </span>
         </p>
-        <Image src="/favicon.ico" alt="zenx5" width={400} height={400} className="mt-2 mx-auto w-auto h-fit"/>
     </CardPing>
 }

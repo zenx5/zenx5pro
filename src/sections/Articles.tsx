@@ -3,9 +3,10 @@ import CardPing from "@/components/CardPing"
 import { getArticlesByAuthor } from "@/services/scraping"
 
 export default async function Articles() {
-    const articles = await getArticlesByAuthor('zenx5', 6)
+    const articles = await getArticlesByAuthor('zenx5', 4)
 
     return <CardPing className="col-span-1 md:col-start-3 col-start-1" isContent h-fit>
+        <h2 className="font-bold text-xl mb-2">Articulos</h2>
         {articles.map( (article:any, index:number) => <Link key={index} target="_blank" href={article.href} className="py-2">
             <h2 className="text-xl opacity-70">{article.title}</h2>
             <p className="text-sm opacity-50" data-href={article.extract?.link}>{article.extract?.data}</p>
