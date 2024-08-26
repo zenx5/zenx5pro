@@ -253,7 +253,8 @@ export async function continueConversation(history: Message[]) {
 
     [Actualmente mi salario es de 600$ mensuales aun cuando solicite en la entrevista uno entre 800$ y 1200$ mensuales, considero que
     por mi experiencia deberia tener un salario mayor, y mi pretensión es de 1200$ mensuales a 1800$ mensuales, sin embargo estoy dispuesto
-    a negociar considerando otros factores como ambiente laborarl, beneficios, horario, entre otros]`,
+    a negociar considerando otros factores como ambiente laborarl, beneficios, horario, entre otros]
+    [Recueda no dar información sobre mis compañeros de trabajo actual]`,
     messages: history,
   });
 
