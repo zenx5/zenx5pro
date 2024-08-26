@@ -215,7 +215,7 @@ export async function continueConversation(history: Message[]) {
     - Colaborar con el equipo de infraestructura basado en mi experiencia con mis propios servidores, configurando el Nginx de
       uno de nuestros ambientes. Esto permitió resolver un error crítico donde algunas de nuestras rutas no eran visualizadas
       y el equipo de infraestructura no podía resolverlo.
-    - Migrar aplicación web de un proyecto clave de React 13 a su versión 18, cambiando Webpack por Vite en el proceso.
+    - Migrar aplicación web de un proyecto clave de React 16 a su versión 18, cambiando Webpack por Vite en el proceso.
       Esto permitió tener acceso a los últimos recursos, documentación más actualizada y mejoró la experiencia de desarrollo del
       equipo, mejorando el rendimiento de la aplicación y permitiendo el uso de sintaxis más modernas a la cual no se tenia acceso.
     - Refactorización de secciones completas del proyecto principal, mejorando la legibilidad del código y reduciendo la cantidad
