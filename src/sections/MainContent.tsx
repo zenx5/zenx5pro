@@ -1,15 +1,19 @@
 import Link from "next/link"
-import Image from "next/image"
 import CardPing from "@/components/CardPing"
-import LinkSchedule from "@/components/LinkSchedule"
 import SectionContent from "@/components/SectionContent"
+import LinkSchedule from "@/components/LinkSchedule"
+import LinkTimeline from "@/components/LinkTimeline"
+
 
 export default function MainContent() {
 
     return <CardPing className="md:col-span-2 col-span-1 " isContent>
         <span className="flex flex-row justify-between items-center pb-4">
             <h2 className="font-bold text-xl mb-2">Sobre mi</h2>
-            <LinkSchedule />
+            <span className="flex flex-row gap-2">
+                <LinkTimeline />
+                <LinkSchedule />
+            </span>
         </span>
         <SectionContent title="Origen dramatico">
             <span  className="opacity-70">Con 12 años, sin acceso a internet y en MS-DOS hice <span className="font-bold">ingeniería inversa de código en Pascal</span>, así comencé mis primeros pasos en este maravilloso mundo del desarrollo</span>

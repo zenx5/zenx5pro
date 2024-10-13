@@ -17,3 +17,12 @@ interface ProjectType {
     privateRepository?: boolean
     tabs?:              string[]
 }
+interface TimelineEvent {
+    id: number;
+    date: string;
+    tags: string[];
+    title: string;
+    steps?: number;
+    enddate?: string;
+    description: string;
+}
