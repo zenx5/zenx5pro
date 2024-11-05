@@ -7,9 +7,9 @@ export default async function Articles() {
 
     return <CardPing className="col-span-1 md:col-start-3 col-start-1" isContent h-fit>
         <span className="font-bold text-xl mb-2">Articulos</span>
-        {articles.map( (article:any, index:number) => <Link key={index} target="_blank" href={article.href} className="py-2">
-            <h2 className="text-xl opacity-70">{article.title}</h2>
-            <p className="text-sm opacity-50" data-href={article.extract?.link}>{article.extract?.data}</p>
+        {articles.map( (article:any, index:number) => <Link key={index} target="_blank" href={article.href} className="py-2 group/items">
+            <h2 className="text-xl opacity-70 group-hover/items:text-indigo-400">{article.title}</h2>
+            <p className="text-sm opacity-50 group-hover/items:text-indigo-400" data-href={article.extract?.link}>{article.extract?.data}</p>
             <div className="text-xs opacity-50 flex flex-row gap-2 items-center mt-2">
                 <span className="flex flex-row items-center gap-1">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">

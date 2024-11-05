@@ -2,7 +2,6 @@ import Link from "next/link"
 import CardPing from "@/components/CardPing"
 import SectionContent from "@/components/SectionContent"
 import LinkSchedule from "@/components/LinkSchedule"
-import LinkTimeline from "@/components/LinkTimeline"
 
 
 export default function MainContent() {
@@ -11,7 +10,6 @@ export default function MainContent() {
         <span className="flex flex-row justify-between items-center pb-4">
             <h2 className="font-bold text-xl mb-2">Sobre mi</h2>
             <span className="flex flex-row gap-2">
-                <LinkTimeline />
                 <LinkSchedule />
             </span>
         </span>
