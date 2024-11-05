@@ -47,7 +47,7 @@ export const links = [
           pt: "CV-Pt"
       },
       icon: 'mdi-file',
-      url: "https://docs.google.com/document/d/10i7Fic4orcgdtHKgt6QSRMM1gn-BbL4iaRavHzCZzFA/edit?usp=sharing",
+      url: "https://docs.google.com/document/d/14vMH3EhV2a3_14hpZEWAKAFpeHs3WKPymSj7SBJThiw/edit?usp=sharing",
     //       es: "https://docs.google.com/document/d/10i7Fic4orcgdtHKgt6QSRMM1gn-BbL4iaRavHzCZzFA/edit?usp=sharing",
     //       en: "https://docs.google.com/presentation/d/1RKko_7pjTwIA7p5_GVu2TX-bTz71N62RTamAT904fwo/edit?usp=sharing",
     //       pt: "https://docs.google.com/presentation/d/1FwwnfO3ecUqhXlx7hAwhGJvbllphLLBun5fbn023Y0k/edit?usp=sharing",
