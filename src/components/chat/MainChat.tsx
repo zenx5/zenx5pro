@@ -4,7 +4,7 @@ import Link from "next/link";
 import Input from "./Input"
 import MessageItem from "./MessageItem";
 import { Message, continueConversation } from "@/tools/actions";
-import LinkSchedule from "../LinkButton";
+import LinkSchedule from "../LinkSchedule";
 
 
 
