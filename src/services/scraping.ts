@@ -1,7 +1,7 @@
 import { JSDOM } from 'jsdom'
 
 
-export const getArticlesByAuthor = async (author:string, max:number) => {
+export const getArticlesByAuthor = async (author:string, max:number|undefined|null=null, offset:number=0) => {
     const response = await fetch(`https://www.linkedin.com/today/author/${author}`)
     const html = await response.text()
     const dom = new JSDOM(html)
@@ -24,7 +24,7 @@ export const getArticlesByAuthor = async (author:string, max:number) => {
         } )
     } )
 
-    return result.slice( 0 , max ?? result.length )
+    return result.slice( offset , max ?? result.length )
 }
 
 

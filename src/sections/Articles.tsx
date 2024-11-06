@@ -3,11 +3,16 @@ import CardPing from "@/components/CardPing"
 import { getArticlesByAuthor } from "@/services/scraping"
 
 export default async function Articles() {
-    const articles = await getArticlesByAuthor('zenx5', 4)
+    const articles = await getArticlesByAuthor('zenx5',5)
 
     return <CardPing className="col-span-1 md:col-start-3 col-start-1" isContent h-fit>
-        <span className="font-bold text-xl mb-2">Articulos</span>
-        {articles.map( (article:any, index:number) => <Link key={index} target="_blank" href={article.href} className="py-2 group/items">
+        <span className="flex flex-row justify-between items-center mb-2">
+            <span className="font-bold text-xl">
+                Articulos
+            </span>
+            <Link href="/articulos" className="underline text-sm hover:text-indigo-500 ">Ver todos</Link>
+        </span>
+        {articles.map( (article:any, index:number) => <Link key={index} target="_blank" href={article.href} className="group/items">
             <h2 className="text-xl opacity-70 group-hover/items:text-indigo-400">{article.title}</h2>
             <p className="text-sm opacity-50 group-hover/items:text-indigo-400" data-href={article.extract?.link}>{article.extract?.data}</p>
             <div className="text-xs opacity-50 flex flex-row gap-2 items-center mt-2">
